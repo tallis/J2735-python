@@ -1,7 +1,7 @@
 from pyasn1.type import univ
 from pyasn1.codec.der import encoder as DERencoder, decoder as DERdecoder
 
-from j2735 import *
+from J2735 import *
 from Plausability import nmea2deg
 
 from J2735Encoders import *
@@ -35,7 +35,7 @@ def getMessageType(encodedJ2735):
         elif str(decoded[0].getComponentByPosition(0)) == "1":
             return "ALC"
 
-    except Exception, err:
+    except Exception as err:
         return "STDMSG: " + str(err)
 
 

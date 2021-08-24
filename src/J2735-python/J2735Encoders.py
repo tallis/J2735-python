@@ -1,7 +1,7 @@
 from pyasn1.type import univ
 from pyasn1.codec.der import encoder as DERencoder, decoder as DERdecoder
 
-from j2735 import *
+from J2735 import *
 from Plausability import nmea2deg
 
 import datetime

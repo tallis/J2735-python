@@ -224,7 +224,7 @@ class VADMApplicationName(univ.OctetString):
     subtypeSpec = constraint.ValueSizeConstraint(0, 30)
 
 
-class VADMinitTS(univ.OctetString):
+class VADMinitTS (univ.OctetString):
     subtypeSpec = constraint.ValueSizeConstraint(0, 19)
 
 
