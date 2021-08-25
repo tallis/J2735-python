@@ -1,8 +1,9 @@
-from math import radians, cos, sin, asin, sqrt
+from math import radians, cos, sin, asin, sqrt, modf
 
 
 def nmea2deg(coordinate):
-    splitCoordinate = coordinate.split(".")
+
+    splitCoordinate = str(coordinate).split(".")
     degree = splitCoordinate[0][0:-2]
 
     minutesCoordinate = splitCoordinate[0][-2:] + "." + splitCoordinate[1]
