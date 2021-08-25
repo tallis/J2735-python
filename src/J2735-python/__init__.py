@@ -1,4 +1,6 @@
-from J2735Encoders import *
+#
+# Sample application on how to encode/decode use J2735 messages with python
+#
 from J2735Decoders import *
 
 print("Starting J2735 test")

@@ -1,11 +1,11 @@
-from pyasn1.type import univ
-from pyasn1.codec.der import encoder as DERencoder, decoder as DERdecoder
+from pyasn1.codec.der import encoder as DERencoder
 
 from J2735 import *
 from Plausability import nmea2deg
 
 import datetime
 
+# Refactor later to avoid global message count. Alternatively use random number generator to avoid DUPs
 BSMcounter = 0
 
 
@@ -32,7 +32,6 @@ def createJ2735BSM(status, nmealatitude, nmealongitude, altitude, speed, vehicle
     newlon = nmea2deg(nmealongitude)
     # print "[createJ2735BSM]\tAfter Conversion " +  str(newlat) + " - " + str(newlon)
 
-    # FAZER SPLIT PELO PONTO E FAZER O ENCODE
     newlat = str(newlat).replace(".", "")
     newlon = str(newlon).replace(".", "")
 

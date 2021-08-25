@@ -1,3 +1,8 @@
+#
+# J2735
+# - Includes J2735 message attribute and format definition
+#
+
 from pyasn1.type import univ, namedtype, namedval, constraint, tag, char
 
 

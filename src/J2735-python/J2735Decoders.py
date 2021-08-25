@@ -1,18 +1,9 @@
-from pyasn1.type import univ
-from pyasn1.codec.der import encoder as DERencoder, decoder as DERdecoder
-
-from J2735 import *
-from Plausability import nmea2deg
-
+from pyasn1.codec.der import decoder as DERdecoder
 from J2735Encoders import *
 
-import datetime
 
-BSMcounter = 0
-
-
-def decodeJ2735BSM(encodedJ2735):
-    decoded = DERdecoder.decode(encodedJ2735, asn1Spec=BasicSafetyMessage())
+def decodeJ2735BSM(encodedBSM):
+    decoded = DERdecoder.decode(encodedBSM, asn1Spec=BasicSafetyMessage())
     return decoded[0]
 
 
@@ -26,7 +17,6 @@ def decodeJ2735ALC(encodedALC):
 ##
 def getMessageType(encodedJ2735):
     try:
-
         decoded = DERdecoder.decode(encodedJ2735)
 
         if str(decoded[0].getComponentByPosition(0)) == "2":
